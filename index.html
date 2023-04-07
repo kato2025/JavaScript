@@ -6,11 +6,11 @@
 </head>
 <body>
   <script>
-    // Your JavaScript goes here!
+  // Your JavaScript goes here!
 
-    // Funcamentals Part 1
+  // Funcamentals Part 1
 
-    // Declare variables
+  // Declare variables
     let length;
     let width = 12;
     let radius = 30;
@@ -22,26 +22,26 @@
     name = "John";
     admin = name;
 
-    //display name
+  //display name
     console.log(name);
 
-    // Calculate Age
+  // Calculate Age
     dob = 1974;
     presentDate = 2023;
     jobAge = presentDate - dob;
     console.log("Age = " + jobAge)
 
-    // Calculate area of a square
+  // Calculate area of a square
     let sarea = length * width;
     console.log("Area of Square = " + sarea)
 
-    // Calculate area of a triangle
+  // Calculate area of a triangle
     let aarea = pi * radius**2
     console.log("Area of Triangle = " + aarea)
 
-    // Fundamentals Part 2
+  // Fundamentals Part 2
 
-    // Declare variables
+  // Declare variables
     console.log(1/0)
     let myname = "Dr Namuene";
     let myage = " is 42 years old"
@@ -55,22 +55,22 @@
     let song1Length = songForJesus.length
     let songFirstWord = songForJesus.slice(8,13)
 
-    // Use template literals
+  // Use template literals
     console.log(`${myname}${myage}`)
 
-    // Display name and age from variables
+  // Display name and age from variables
     console.log(songForJesus)
     console.log(secondSongForJesus)
     console.log(mySpeech)
     console.log(myname + " is 42 years old")
     console.log(myname + myage)
 
-    // Concatenate strings
+  // Concatenate strings
     console.log("He went to school for" + 
       " " + (universityEndDate-universityStartDate) 
       + " " + "years")
 
-    // Convert to string using toString
+  // Convert to string using toString
     console.log("I used the winning slogan in my tiket, it is: " 
       + Number(winSlogan) + "," + "in " 
       + universityEndDate.toString())
@@ -78,7 +78,7 @@
     console.log("The first word of Jesus song is: "
       + songFirstWord)
 
-    // Use Slice to get part of a string
+  // Use Slice to get part of a string
     console.log("Jesus song sings: " 
       + songForJesus.slice(8))
     console.log("When we remove the last word the Jesus song sings: " 
@@ -86,13 +86,13 @@
     console.log("The second sentence of the Jesus song sings: " 
       + songForJesus.substr(35))
     
-    // Concatenate strings with concat
+  // Concatenate strings with concat
     let completeName = "Dr Kato Samuel Namuene"
     let myEmployer = "Uniersity of Buea"
     let nameAndJob = completeName.concat(", ",myEmployer)
     console.log(nameAndJob)
 
-    // Convert a string to uppercase and lowercase
+  // Convert a string to uppercase and lowercase
     let upperCaseName = completeName.toUpperCase()
     let lowerCaseName = completeName.toLowerCase()
     console.log("My name in lowercase: " 
@@ -100,29 +100,29 @@
     console.log("My name in uppercase: " 
       + upperCaseName)
 
-    // Trim whitespaces in a string using trim, trimstart and trimend
+  // Trim whitespaces in a string using trim, trimstart and trimend
     let trimString = "   I am Kato    "
     console.log(trimString)
     console.log(trimString.trim())
     console.log(trimString.trimStart())
     console.log(trimString.trimEnd())
 
-    // Add space at the beginning and end of a string using padStart and padEnd
+  // Add space at the beginning and end of a string using padStart and padEnd
     let wifeName = "Bome"
     console.log(wifeName.padStart(8,"Kato"))
     console.log(wifeName.padEnd(15,"Namuene"))
 
-    // Get the letter at a particular index using charAt
+  // Get the letter at a particular index using charAt
     console.log(wifeName.charAt(2))
     console.log(wifeName.charCodeAt(2))
     console.log(wifeName[2])
 
-    // Split a string into individual characters using split
+  // Split a string into individual characters using split
     console.log(wifeName.split(""))
     console.log(wifeName.split(","))
     console.log(wifeName.split("|"))
 
-    // Conditional/logical operations using the if, else if and else statement  
+  // Conditional/logical operations using the if, else if and else statement  
     let hour = 23
     if (hour <= 19 && hour >16) {
       greeting = "Good evening"
@@ -168,7 +168,7 @@
         console.log("You cant also know the value of the wood")
       }
   
-    // Conditional operations using switch
+  // Conditional operations using switch
     let squareLength = 10
     let squareWidth = 10
     let squareArea = squareLength * squareWidth
@@ -235,7 +235,7 @@
         console.log("Something went wrong.");
     }
 
-    // Conditional operations using ternary operator
+  // Conditional operations using ternary operator
     let rectangleLength = prompt('Enter length:')
     let rectangleWidth = prompt('Enter Width:')
     let rectangleArea = rectangleLength * rectangleWidth
@@ -248,7 +248,7 @@
     alert(numberType)
 
       
-    // Odin Project exercises
+  // Odin Project exercises
 
     // Exercise 1
         /**
@@ -373,22 +373,44 @@
     console.log(greeting)
     */
 
-    // Functions
+  // Functions
     function doubleItem(item) {
       return item * 2
     }
+    // Caculate area of a rectangle and square
     function rectangleAndSqureArea(shapeLength,shapeWidth) {
       return shapeLength * shapeWidth
     }
     console.log(doubleItem(4))
     console.log("Area: " + rectangleAndSqureArea(5,6) + " Square meters")
-    
     shapeLength = prompt("enter length")
     shapeWidth = prompt("enter length")
     function rectangleAndSqureArea1(shapeLength,shapeWidth) {
       return shapeLength * shapeWidth
     }
-    console.log(`Length: ${shapeLength}, Width: ${shapeWidth}`+ " " + "Area: " + rectangleAndSqureArea1(shapeLength,shapeWidth) + " Square meters")
+    console.log(`Length: ${shapeLength}, Width: ${shapeWidth}`+ " " + "Area: " 
+    + rectangleAndSqureArea1(shapeLength,shapeWidth) + " Square meters")
+    // Calculate volume of a cylinder
+    cylinderRadius = prompt("Enter triangle radius")
+    cylinderHeight = prompt("Enter triangle height")
+    pi = 3.14159
+    function cylinderVolume (pi, cylinderRadius, cylinderHeight) {
+      volume = pi * cylinderRadius**2 * cylinderHeight
+      if (volume > 0) {
+        if (volume >= 20 && volume < 30) {
+          return volume + 2
+        } else if (volume >= 30 && volume < 50) {
+          return volume + 4
+        } else if (volume > 50) {
+          return volume + 6
+        } else {
+          return volume + 1
+        }
+      } else {
+        return console.log("Please enter a value greater than zero to calculate volume of a cylinder")
+      }
+      }
+    console.log(cylinderVolume(pi, cylinderRadius, cylinderHeight))
   </script>
 </body>
 </html>
