@@ -82,7 +82,7 @@
     console.log("Jesus song sings: " 
       + songForJesus.slice(8))
     console.log("When we remove the last word the Jesus song sings: " 
-      +songForJesus.slice(-40,-1))
+      + songForJesus.slice(-40,-1))
     console.log("The second sentence of the Jesus song sings: " 
       + songForJesus.substr(35))
     
@@ -244,11 +244,11 @@
     alert(rectangleArea1)
 
     let numberToCheck = prompt("Enter number")
-    let numberType = (numberToCheck >= 0) ? (numberToCheck == 0 ? "Zero" : "Powitive") : "Negative"
+    let numberType = (numberToCheck >= 0) ? (numberToCheck == 0 ? "Zero" : "Positive") : "Negative"
     alert(numberType)
 
       
-  // Odin Project exercises
+  // Odin Assignment (Fundamentals Part 2)
 
     // Exercise 1
         /**
@@ -377,6 +377,7 @@
     function doubleItem(item) {
       return item * 2
     }
+    
     // Caculate area of a rectangle and square
     function rectangleAndSqureArea(shapeLength,shapeWidth) {
       return shapeLength * shapeWidth
@@ -411,6 +412,45 @@
       }
       }
     console.log(cylinderVolume(pi, cylinderRadius, cylinderHeight))
+  
+    // Arrow functions
+
+    // Calculate area of a triangle using Arrow Function
+    let tRedius = prompt("Enter triangle radius")
+    let tArea = (pi, tRedius) => pi * tRedius**2
+    console.log("The area of your triangle is: " + tArea(pi, tRedius))
+    let largeArea = (tArea(pi, tRedius) >= 50) ? console.log("Large area: " + tArea(pi, tRedius)) : console.log("Small area: " + tArea(pi, tRedius))
+    // Calculate area of a parallelogram using arrow funstions
+    let paraLength = prompt("Enter parallelogram length")
+    let paraWidth = prompt("Enter parallelogram width")
+    let paraArea = (paraLength, paraWidth) => {
+      let parallelogramArea = paraLength * paraWidth
+      return parallelogramArea
+    }
+    console.log("The area of your parallelogram is: " + paraArea(paraLength, paraWidth) + " meters square")
+
+  // Odin Assignment(Fundamentals Part 3)
+
+    // 1. Write a function called add7 that takes one number and returns that number + 7.
+    function add7(number) {
+      return number + 7
+    }
+    console.log(add7(2))
+    // 2. Write a function called multiply that takes 2 numbers and returns their product.
+    let multiply = (a,b) => a * b
+    console.log(multiply(2,3))
+    /* 3. Write a function called capitalize that takes a string and returns that string with only the first 
+      letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.*/
+    function capitalise (wordString) {
+      return firstLettter = wordString.slice(0,1).toUpperCase() + wordString.slice(1).toLowerCase()
+    }
+    console.log(capitalise("KAto"))
+    // 4. Write a function called lastLetter that takes a string and returns the very last letter of that string:
+    function lastLetter (wordString) {
+      wordLastLetter = wordString.slice(-1)
+      return wordLastLetter
+    }
+    console.log(lastLetter("nintendos"))
   </script>
 </body>
 </html>
