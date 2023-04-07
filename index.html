@@ -442,15 +442,15 @@
     /* 3. Write a function called capitalize that takes a string and returns that string with only the first 
       letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.*/
     function capitalise (wordString) {
-      return firstLettter = wordString.slice(0,1).toUpperCase() + wordString.slice(1).toLowerCase()
+      return firstLettter = wordString.substr(0,1).toUpperCase() + wordString.substr(1).toLowerCase()
     }
-    console.log(capitalise("KAto"))
+    console.log(capitalise("NAMUenE"))
     // 4. Write a function called lastLetter that takes a string and returns the very last letter of that string:
     function lastLetter (wordString) {
       wordLastLetter = wordString.slice(-1)
       return wordLastLetter
     }
-    console.log(lastLetter("nintendos"))
+    console.log(lastLetter("Journal"))
   </script>
 </body>
 </html>
