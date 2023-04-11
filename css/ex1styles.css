@@ -21,6 +21,10 @@ body {
     background-color: lightgreen;
     border-radius: 150px;
 }
+  .choice {
+    margin-bottom: 9px;
+    
+  }
   .choice,
   .sheading,
   .rheading,
@@ -28,9 +32,6 @@ body {
     font-size: 40px;
     color: red;
     text-shadow: 2px 2px yellow;
-  }
-  .choice {
-    margin-bottom: 9px;
   }
   .sheading,
   .rheading {
@@ -50,6 +51,7 @@ body {
     transition: transform 0.2s ease-in-out;
   }
   .hand img {
+    padding-left: 15px;
     width: 80%;
     height: 80%;
     position: absolute;

@@ -2,11 +2,11 @@
     let userScore = 0;
     let computerScore = 0;
     // Initialise user and computer choices
-    function play(userChoice) {
-        const computerChoice = getComputerChoice();
-        const result = getResult(userChoice, computerChoice);
+    function play(playerSelection) {
+        const computerSelection = getComputerChoice();
+        const result = getResult(playerSelection, computerSelection);
         updateScore(result);
-        showResult(result, userChoice, computerChoice);
+        showResult(result, playerSelection, computerSelection);
     }
     // Get a radom number for the computer choice
     function getComputerChoice() {
@@ -15,14 +15,14 @@
         return choices[randomNumber];
     }
     // Evaluate user and computer choices to get the winner
-    function getResult(userChoice, computerChoice) {
-        if (userChoice === 'rock' && computerChoice === 'scissors') {
+    function getResult(playerSelection, computerSelection) {
+        if (playerSelection === 'rock' && computerSelection === 'scissors') {
             return 'win';
-        } else if (userChoice === 'paper' && computerChoice === 'rock') {
+        } else if (playerSelection === 'paper' && computerSelection === 'rock') {
             return 'win';
-        } else if (userChoice === 'scissors' && computerChoice === 'paper') {
+        } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
             return 'win';
-        } else if (userChoice === computerChoice) {
+        } else if (playerSelection === computerSelection) {
             return 'tie';
         } else {
             return 'lose';
@@ -39,18 +39,18 @@
         document.getElementById('computer-score').textContent = computerScore;
     }
     // Display results with win or lose text
-    function showResult(result, userChoice, computerChoice) {
+    function showResult(result, playerSelection, computerSelection) {
         const resultText = document.getElementById('result-text');
         if (result === 'win') {
-            resultText.textContent = `Your choice is ${userChoice}, the computer's choice is ${computerChoice}. You win!`;
+            resultText.textContent = `Your choice is ${playerSelection}, the computer's choice is ${computerSelection}. You win!`;
             humanface.textContent = `😃`
             computerface.textContent = `😓`
         } else if (result === 'lose') {
-            resultText.textContent = `Your choice is ${userChoice}, the computer's choise is ${computerChoice}. Computer wins!`;
+            resultText.textContent = `Your choice is ${playerSelection}, the computer's choise is ${computerSelection}. Computer wins!`;
             humanface.textContent = `😓`
             computerface.textContent = `😃`
         } else {
-            resultText.textContent = `Your choice is ${userChoice}, the computer's choice is ${computerChoice}. A tie!`;
+            resultText.textContent = `Your choice is ${playerSelection}, the computer's choice is ${computerSelection}. A tie!`;
             humanface.textContent = `😃`
             computerface.textContent = `😃`
         }
