@@ -15,28 +15,28 @@
   <div class="choose">
   <h2 class="choice">Choose (Many times as wished)</h2>
   <div class="hands">
-    <div class="hand" id="user-hand" onclick="play('rock')">
+    <div class="hand" id="rockhand" onclick="play('rock')">
       <img src="./images/rock.png" alt="Rock">
-      <div class="label">Rock</div>
+      <div id="rock" class="label">Rock</div>
     </div>
-    <div class="hand" id="user-hand" onclick="play('paper')">
+    <div class="hand" id="paperhand" onclick="play('paper')">
       <img src="./images/paper.png" alt="Paper">
-      <div class="label">Paper</div>
+      <div id="paper" class="label">Paper</div>
     </div>
-    <div class="hand" id="user-hand" onclick="play('scissors')">
+    <div class="hand" id="scissorshand" onclick="play('scissors')">
       <img src="./images/scissors.png" alt="Scissors">
-      <div class="label">Scissors</div>
+      <div id="scissors" class="label">Scissors</div>
     </div>
-  </div><br><br><br>
+  </div><br><br>
 </div>
   <br><br>
 <!-- Scores: human and computer -->
 <div class="scorescontainer">
-  <div id="humanface">👨‍🚀</div>
+  <div id="playerface">👨‍🚀</div>
   <div id="scores">
     <div class="sheading">Scores</div>
   <div class="competitor">
-    <div class="human">
+    <div class="player">
       <p>👩🏽‍🤝‍👨🏻 Human</p>
     </div>
     <div class="computer">
@@ -45,7 +45,7 @@
   </div>
  <div class="scoreboard">
   <div class="score">
-    <p id="user-score">0</p>
+    <p id="player-score">0</p>
   </div>
   <div class="score">
     <p id="computer-score">0</p>
@@ -58,7 +58,7 @@
   <div class="result">
     <div class="rheading">Results</div>
     <p id="result-text"></p>
-    <button onclick="reset()">Play Again 👨🏻‍💻</button>
+    <button onclick="reset()">New Game 👨🏻‍💻</button>
   </div>
 </div>
   </body>

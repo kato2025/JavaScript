@@ -1,7 +1,7 @@
     // Declare variables
-    let userScore = 0;
+    let playerScore = 0;
     let computerScore = 0;
-    // Initialise user and computer choices
+    // Initialise player and computer choices
     function play(playerSelection) {
         const computerSelection = getComputerChoice();
         const result = getResult(playerSelection, computerSelection);
@@ -14,7 +14,7 @@
         const randomNumber = Math.floor(Math.random() * 3);
         return choices[randomNumber];
     }
-    // Evaluate user and computer choices to get the winner
+    // Evaluate player and computer choices to get the winner
     function getResult(playerSelection, computerSelection) {
         if (playerSelection === 'rock' && computerSelection === 'scissors') {
             return 'win';
@@ -31,11 +31,11 @@
     // Update the results from evaluated user and computer choices
     function updateScore(result) {
         if (result === 'win') {
-            userScore++;
+            playerScore++;
         } else if (result === 'lose') {
             computerScore++;
         }
-        document.getElementById('user-score').textContent = userScore;
+        document.getElementById('player-score').textContent = playerScore;
         document.getElementById('computer-score').textContent = computerScore;
     }
     // Display results with win or lose text
@@ -43,29 +43,47 @@
         const resultText = document.getElementById('result-text');
         if (result === 'win') {
             resultText.textContent = `Your choice is ${playerSelection}, the computer's choice is ${computerSelection}. You win!`;
-            humanface.textContent = `😃`
+            playerface.textContent = `😃`
             computerface.textContent = `😓`
         } else if (result === 'lose') {
             resultText.textContent = `Your choice is ${playerSelection}, the computer's choise is ${computerSelection}. Computer wins!`;
-            humanface.textContent = `😓`
+            playerface.textContent = `😓`
             computerface.textContent = `😃`
         } else {
             resultText.textContent = `Your choice is ${playerSelection}, the computer's choice is ${computerSelection}. A tie!`;
-            humanface.textContent = `😃`
+            playerface.textContent = `😃`
             computerface.textContent = `😃`
         }
         document.querySelector('.result').style.display = 'block';
     }
     // Reset the game to start a new one
-    function reset() {
-        userScore = 0;
-        computerScore = 0;
-        document.getElementById('user-score').textContent = userScore;
-        document.getElementById('computer-score').textContent = computerScore;
-        document.getElementById('result-text').textContent = '';
-        document.querySelector('.result').style.display = 'none';
-        document.getElementById('humanface').style.visibility = 'visible';
-        humanface.textContent = `👨‍🚀`
-        document.getElementById('computerface').style.visibility = 'vivible';
-        computerface.textContent = `🖲`
+       function reset() {
+        let winner;
+        // Congratulate the winner
+        if (playerScore > computerScore) {
+            winner = 'player';
+            const message = `Congratulations! You won with a score of ${playerScore}-${computerScore}!`;
+            alert(message);
+        } else if (computerScore > playerScore) {
+            winner = 'computer';
+            const message = `Better luck next time! The computer won with a score of ${computerScore}-${playerScore}.`;
+            alert(message);
+        } else {
+            winner = 'tie';
+            const message = `Congratulations Player and Computer. It's a tie! The score is ${playerScore}-${computerScore}.`;
+            alert(message);
+        }
+        // ask for user confirmation before resetting
+        if (confirm("CLick OK to reset the score and start a new game or click Cansel to return to the game and continue playing")) {
+            playerScore = 0;
+            computerScore = 0;
+            document.getElementById('player-score').textContent = playerScore;
+            document.getElementById('computer-score').textContent = computerScore;
+            document.getElementById('result-text').textContent = '';
+            document.getElementById('playerface').style.visibility = 'visible';
+            playerface.textContent = `👨‍🚀`;
+            document.getElementById('computerface').style.visibility = 'visible';
+            computerface.textContent = `🖲`;
+        }
     }
+    

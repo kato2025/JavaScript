@@ -19,25 +19,31 @@ body {
   .choose {
     border: 2px solid red;
     background-color: lightgreen;
-    border-radius: 150px;
+    border-radius: 90px;
 }
   .choice {
     margin-bottom: 9px;
-    
   }
   .choice,
   .sheading,
-  .rheading,
-  .score {
+  .rheading {
     font-size: 40px;
     color: red;
-    text-shadow: 2px 2px yellow;
+    text-shadow: 1px 1px yellow;
+  }
+  .sheading,
+  .score {
+    color: rgb(255, 250, 166);
   }
   .sheading,
   .rheading {
     margin-top: 10px;
   }
   .hands {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
   }
@@ -50,7 +56,11 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
   }
+  .hand:hover {
+    transform: scale(1.1);
+  }
   .hand img {
+    margin: auto;
     padding-left: 15px;
     width: 80%;
     height: 80%;
@@ -59,45 +69,55 @@ body {
     left: 0;
   }
   .label {
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
     position: absolute;
     bottom: -24px;
     left: 0;
     right: 0;
-    color: yellow;
+    color: red;
     font-size: 32px;
     font-weight: 500;
-    background-color: rgb(216, 125, 5);
-    padding: 0.5rem 16px;
-    border-radius: 20px;
+    padding: 25px 16px;
     z-index: 1;
     transition: transform 0.2s ease-in-out;
   }
-  .hand:hover {
-    transform: scale(1.1);
+  #rock {
+    font-weight: 900;
+    color: rgb(93, 191, 230);
+    text-shadow: 1px 1px blue;
+  }
+  #paper {
+    font-weight: 900;
+    color: rgb(232, 80, 78);
+    text-shadow: 1px 1px red;
+  }
+  #scissors {
+    font-weight: 900;
+    color: rgb(250, 178, 15);
+    text-shadow: 1px 1px red;
   }
 /* Scores: human and computer */
   .scorescontainer {
     display: flex;
   }
-  #humanface,
+  #playerface,
   #computerface {
     display: flex;
     font-size: 120px;
     align-self: center;
     margin: auto;
-
   }
   #scores {
     margin: auto;
     display: flex;
     flex-direction: column;
-    background-color: rgb(94, 221, 62);
+    background-color:  rgb(232, 80, 78);
     border-radius: 40px;
     border: 2px solid red;
     justify-content: center;
     width: 450px;
-    text-shadow: 2px 2px yellow;
   }
  .competitor {
     display: flex;
@@ -105,18 +125,21 @@ body {
     padding: 10px;
     color: #000;
   }
-  .human,
+  .player,
   .computer {
     display: flex;
     justify-content: center;
     width: 200px;
     text-align: center;
-    border-radius: 5px;
+    text-shadow: 1px 1px red;
   }
-  .human p,
+  .player p,
   .computer p {
-    font-size: 30px;
     margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFF;
+    text-shadow: 1px 1px green;
   }
   .scoreboard {
     margin-bottom: 16px;
@@ -127,10 +150,6 @@ body {
     width: 200px;
     text-align: center;
     border-radius: 5px;
-  }
-  .score h2 {
-    margin-bottom: 16px;
-    font-size: 32px;
   }
   .score p {
     margin: 0;
@@ -143,19 +162,20 @@ body {
     padding: 16px;
     padding-top: 1.6px;
     border-radius: 5px;
-    background-color: rgb(3, 154, 3);
+    background-color:  rgb(93, 191, 230);
     border-radius: 40px;
-    border: 2px solid red;
+    border: 1px solid red;
   }
   #result-text {
     margin-bottom: 16px;
     font-size: 27.2px;
-    color: yellow;
+    color: #FFF;
+    text-shadow: 1px 1px green;
   }
   button {
     padding: 16px 32px;
-    background-color: rgb(216, 125, 5);
-    color: yellow;
+    background-color: rgb(232, 80, 78);
+    color: rgb(255, 250, 166);
     font-size: 32px;
     font-weight: 500;
     border: none;
@@ -164,6 +184,6 @@ body {
     transition: transform 0.2s ease-in-out;
   }
   button:hover {
-    background-color: #f7c332;
+    background-color: rgb(232, 80, 78);
     transform: scale(1.1);
   }
