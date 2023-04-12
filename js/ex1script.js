@@ -46,7 +46,7 @@
             playerface.textContent = `😃`
             computerface.textContent = `😓`
         } else if (result === 'lose') {
-            resultText.textContent = `Your choice is ${playerSelection}, the computer's choise is ${computerSelection}. Computer wins!`;
+            resultText.textContent = `Your choice is ${playerSelection}, the computer's choice is ${computerSelection}. Computer wins!`;
             playerface.textContent = `😓`
             computerface.textContent = `😃`
         } else {
