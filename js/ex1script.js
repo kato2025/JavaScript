@@ -7,6 +7,25 @@
         const result = getResult(playerSelection, computerSelection);
         updateScore(result);
         showResult(result, playerSelection, computerSelection);
+        // Announce the winner
+        if (playerScore === 5 || computerScore === 5) {
+            let winner;
+            if (playerScore > computerScore) {
+                winner = 'player';
+                const message = `Congratulations! You won with a score of ${playerScore} points to ${computerScore}`;
+                alert(message);
+            } else if (computerScore > playerScore) {
+                winner = 'computer';
+                const message = `Better luck next time! The computer won with a score of ${computerScore} points to ${playerScore}`;
+                alert(message);
+            } else {
+                winner = 'tie';
+                const message = `Congratulations Player and Computer. It's a tie! The score is ${playerScore} : ${computerScore}`;
+                alert(message);
+            }
+            // Reset the game
+            reset();
+        }
     }
     // Get a radom number for the computer choice
     function getComputerChoice() {
@@ -57,33 +76,16 @@
         document.querySelector('.result').style.display = 'block';
     }
     // Reset the game to start a new one
-       function reset() {
-        let winner;
-        // Congratulate the winner
-        if (playerScore > computerScore) {
-            winner = 'player';
-            const message = `Congratulations! You won with a score of ${playerScore}-${computerScore}!`;
-            alert(message);
-        } else if (computerScore > playerScore) {
-            winner = 'computer';
-            const message = `Better luck next time! The computer won with a score of ${computerScore}-${playerScore}.`;
-            alert(message);
-        } else {
-            winner = 'tie';
-            const message = `Congratulations Player and Computer. It's a tie! The score is ${playerScore}-${computerScore}.`;
-            alert(message);
-        }
-        // ask for user confirmation before resetting
-        if (confirm("CLick OK to reset the score and start a new game or click Cansel to return to the game and continue playing")) {
-            playerScore = 0;
-            computerScore = 0;
-            document.getElementById('player-score').textContent = playerScore;
-            document.getElementById('computer-score').textContent = computerScore;
-            document.getElementById('result-text').textContent = '';
-            document.getElementById('playerface').style.visibility = 'visible';
-            playerface.textContent = `👨‍🚀`;
-            document.getElementById('computerface').style.visibility = 'visible';
-            computerface.textContent = `🖲`;
-        }
+    function reset() {
+        playerScore = 0;
+        computerScore = 0;
+        document.getElementById('player-score').textContent = playerScore;
+        document.getElementById('computer-score').textContent = computerScore;
+        document.getElementById('result-text').textContent = '';
+        document.getElementById('playerface').style.visibility = 'visible';
+        playerface.textContent = `👨‍🚀`;
+        document.getElementById('computerface').style.visibility = 'visible';
+        computerface.textContent = `🖲`;
     }
+
     
